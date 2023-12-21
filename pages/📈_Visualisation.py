@@ -131,7 +131,7 @@ def hist():
 col1, col2 = st.columns([1, 4])
 
 with col1:
-    selected_option = option_menu(None, ['Line Charts', 'Bar Charts', 'Scatter Plots', 'Pie Charts',# 'Bubble Charts', 
+    selected = option_menu(None, ['Line Charts', 'Bar Charts', 'Scatter Plots', 'Pie Charts',# 'Bubble Charts', 
                                   'Box Plots', 'Histograms'], 
         icons=['graph-up', 'bar-chart-line', 'diagram-2-fill', 'pie-chart-fill',# 'dot', 
                'align-middle', 'reception-2'], 
@@ -139,20 +139,17 @@ with col1:
 
 if len(df) > 0:
     with col2:
-        match selected_option:
-            case "Line Charts":
+        if selected == "Line Charts":
                 line_charts()
-            case "Bar Charts":
+        elif selected == "Bar Charts":
                 bar_charts()
-            case "Scatter Plots":
+        elif selected == "Scatter Plots":
                 scatter_plots()
-            case "Pie Charts":
+        elif selected == "Pie Charts":
                 pie_charts()
-            # case "Bubble Charts":
-            #     bubble_charts()
-            case "Box Plots":
+        elif selected == "Box Plots":
                 box_plots()
-            case "Histograms":
+        elif selected == "Histograms":
                 hist()
             
 st.session_state['charts'] = charts
