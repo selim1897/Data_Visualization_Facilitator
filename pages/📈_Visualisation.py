@@ -139,21 +139,24 @@ with col1:
 
 if len(df) > 0:
     with col2:
-        match selected:
-            case "Line Charts":
-                line_charts()
-            case "Bar Charts":
-                bar_charts()
-            case "Scatter Plots":
-                scatter_plots()
-            case "Pie Charts":
-                pie_charts()
-            # case "Bubble Charts":
-            #     bubble_charts()
-            case "Box Plots":
-                box_plots()
-            case "Histograms":
-                hist()
+        try:
+            match selected:
+                case "Line Charts":
+                    line_charts()
+                case "Bar Charts":
+                    bar_charts()
+                case "Scatter Plots":
+                    scatter_plots()
+                case "Pie Charts":
+                    pie_charts()
+                # case "Bubble Charts":
+                #     bubble_charts()
+                case "Box Plots":
+                    box_plots()
+                case "Histograms":
+                    hist()
+        except:
+            pass
             
 st.session_state['charts'] = charts
 
