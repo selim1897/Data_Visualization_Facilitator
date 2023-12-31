@@ -4,7 +4,7 @@ from openai import OpenAI
 
 st.set_page_config(page_title="Chatbot", page_icon="🤖", layout="centered", initial_sidebar_state="auto", menu_items=None)
 
-client = OpenAI(api_key="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")
+client = OpenAI(api_key=st.secrets["api_key"])
 
 if 'messages' in st.session_state:
     messages = st.session_state['messages']
